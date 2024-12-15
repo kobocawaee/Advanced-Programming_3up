@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
 <GridPane fx:id="game" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="364.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLController">
   <columnConstraints>
@@ -25,16 +26,34 @@
       <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button fx:id="A" mnemonicParsing="false" prefHeight="101.0" prefWidth="200.0" text="A" GridPane.rowIndex="4" />
-      <Button fx:id="W" mnemonicParsing="false" prefHeight="105.0" prefWidth="200.0" text="W" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <Button fx:id="D" mnemonicParsing="false" prefHeight="101.0" prefWidth="136.0" text="D" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <Button fx:id="A" mnemonicParsing="false" prefHeight="101.0" prefWidth="200.0" style="-fx-background-image: url('button_A.jpg');" text="A" textFill="WHITE" GridPane.rowIndex="4">
+         <font>
+            <Font size="25.0" />
+         </font></Button>
+      <Button fx:id="W" mnemonicParsing="false" prefHeight="105.0" prefWidth="200.0" style="-fx-background-image: url('button_W.jpg');" text="W" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <font>
+            <Font size="25.0" />
+         </font></Button>
+      <Button fx:id="D" mnemonicParsing="false" prefHeight="101.0" prefWidth="136.0" style="-fx-background-image: url('button_D.jpg');" text="D" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
+         <font>
+            <Font size="25.0" />
+         </font></Button>
       <Line endX="-118.54415893554688" endY="6.50750732421875" startX="-118.54415893554688" startY="656.8004150390625" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <Line endX="756.7723388671875" endY="6.50750732421875" startX="756.7723388671875" startY="-460.41094970703125" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <VBox prefHeight="200.0" prefWidth="100.0">
+      <VBox maxWidth="364.0" minWidth="364.0" prefHeight="100.0" prefWidth="364.0">
          <children>
-            <Label fx:id="score" prefHeight="15.0" prefWidth="103.0" text="score : 0" />
-            <Label fx:id="time" prefHeight="15.0" prefWidth="104.0" />
-            <Label fx:id="combo" text="Combo : 0" />
+            <Label fx:id="score" ellipsisString="" minWidth="364.0" prefHeight="15.0" prefWidth="103.0" text="Score : 0" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font></Label>
+            <Label fx:id="time" ellipsisString="" minWidth="364.0" prefHeight="15.0" prefWidth="104.0" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font></Label>
+            <Label fx:id="combo" ellipsisString="" minWidth="364.0" text="Combo : 0" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font></Label>
          </children>
       </VBox>
       <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="1">
@@ -77,7 +96,7 @@
             <ImageView fx:id="image8" fitHeight="92.0" fitWidth="102.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" />
             <VBox fx:id="endgame" alignment="TOP_CENTER" opacity="0.0" prefHeight="93.0" prefWidth="148.0">
                <children>
-                  <Label fx:id="endscore" prefHeight="38.0" prefWidth="119.0" textAlignment="CENTER" />
+                  <Label fx:id="endscore" prefHeight="38.0" prefWidth="285.0" textAlignment="CENTER" />
                   <Button fx:id="again" mnemonicParsing="false" onAction="#play_again" prefHeight="23.0" prefWidth="126.0" text="再來一次" />
                </children>
             </VBox>
