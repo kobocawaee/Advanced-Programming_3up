@@ -2,11 +2,10 @@
 * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
 */
-
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-
+import javafx.scene.media.AudioClip;
 import java.io.IOException;
 import java.util.Random;
 import javafx.fxml.FXML;
@@ -113,9 +112,11 @@ public class PlayController{
     
     //射擊圓形設定
     private void Shot_Circle(int column) {
+        AudioClip pop_sound = new AudioClip(getClass().getResource("pop.wav").toExternalForm());
         ImageView[] images = {image10, image11, image12};
         ImageView circle = images[column];
         if(circle.getOpacity() == 1.0){
+            pop_sound.play();
             comboHit++;
             point+=10+(comboHit/5)*5;
             score.setText("Score : "+point);
