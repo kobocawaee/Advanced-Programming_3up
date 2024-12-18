@@ -26,15 +26,15 @@
       <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button fx:id="A" mnemonicParsing="false" prefHeight="101.0" prefWidth="200.0" style="-fx-background-image: url('button_A.jpg');" text="A" textFill="WHITE" GridPane.rowIndex="4">
+      <Button fx:id="A" mnemonicParsing="false" prefHeight="101.0" prefWidth="200.0" style="-fx-background-image: url('/res/button_A.jpg');" text="A" textFill="WHITE" GridPane.rowIndex="4">
          <font>
             <Font size="25.0" />
          </font></Button>
-      <Button fx:id="W" mnemonicParsing="false" prefHeight="105.0" prefWidth="200.0" style="-fx-background-image: url('button_W.jpg');" text="W" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+      <Button fx:id="W" mnemonicParsing="false" prefHeight="105.0" prefWidth="200.0" style="-fx-background-image: url('/res/button_W.jpg');" text="W" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
          <font>
             <Font size="25.0" />
          </font></Button>
-      <Button fx:id="D" mnemonicParsing="false" prefHeight="101.0" prefWidth="136.0" style="-fx-background-image: url('button_D.jpg');" text="D" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
+      <Button fx:id="D" mnemonicParsing="false" prefHeight="101.0" prefWidth="136.0" style="-fx-background-image: url('/res/button_D.jpg');" text="D" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
          <font>
             <Font size="25.0" />
          </font></Button>
@@ -46,7 +46,7 @@
                <font>
                   <Font size="25.0" />
                </font></Label>
-            <Label fx:id="time" ellipsisString="" minWidth="364.0" prefHeight="15.0" prefWidth="104.0" textFill="WHITE">
+            <Label fx:id="time" ellipsisString="" minWidth="364.0" prefHeight="15.0" prefWidth="104.0" text="Time : 30" textFill="WHITE">
                <font>
                   <Font size="25.0" />
                </font></Label>
@@ -97,7 +97,6 @@
             <VBox fx:id="endgame" alignment="TOP_CENTER" opacity="0.0" prefHeight="93.0" prefWidth="148.0">
                <children>
                   <Label fx:id="endscore" prefHeight="38.0" prefWidth="285.0" textAlignment="CENTER" />
-                  <Button fx:id="again" mnemonicParsing="false" onAction="#play_again" prefHeight="23.0" prefWidth="126.0" text="再來一次" />
                </children>
             </VBox>
             <VBox fx:id="ready_game" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
@@ -137,4 +136,3 @@
       </StackPane>
    </children>
 </GridPane>
-

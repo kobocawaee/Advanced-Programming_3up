@@ -1,5 +1,9 @@
-import java.io.IOException;
+/*
+* Author:https://github.com/kobocawaee
+* Author:https://github.com/JeffreyLee143
+*/
 
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,7 +34,7 @@ public class GameOverController {
     @FXML
     public void Click_title(ActionEvent event) throws IOException {
         backgroundMusicPlayer.stop();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuController.fxml"));
         Parent root = loader.load();
         
         // 取得目前舞台
@@ -46,11 +50,11 @@ public class GameOverController {
     public void Click_Play_Again(ActionEvent event) throws IOException {
         backgroundMusicPlayer.stop();
         if(play==1){
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Play1.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Play1Controller.fxml"));
             root = loader.load();
         }
         else{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Play2.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Play2Controller.fxml"));
             root = loader.load();
         }
         
@@ -64,7 +68,7 @@ public class GameOverController {
     }
     @FXML
     public void initialize(int score, int combo, int num){
-        Image img = new Image(getClass().getResource("gameover_image.png").toExternalForm()); //背景圖片
+        Image img = new Image(getClass().getResource("/res/gameover_image.png").toExternalForm()); //背景圖片
         BackgroundImage bImg = new BackgroundImage(img, BackgroundRepeat.NO_REPEAT,
         BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         Background bGround = new Background(bImg);
@@ -74,7 +78,7 @@ public class GameOverController {
         label_combo.setText(String.valueOf(combo));
         
         play = num;
-        Media backgroundMusic = new Media(getClass().getResource("gameover_music.wav").toExternalForm());
+        Media backgroundMusic = new Media(getClass().getResource("/res/gameover_music.wav").toExternalForm());
         backgroundMusicPlayer = new MediaPlayer(backgroundMusic);
         backgroundMusicPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         backgroundMusicPlayer.play();
