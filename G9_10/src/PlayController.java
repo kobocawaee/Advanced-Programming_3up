@@ -2,6 +2,7 @@
 * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
 */
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -26,17 +27,21 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class PlayController{
+public class Play1Controller{
     @FXML ImageView image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12;
     @FXML Button A, W, D, again;
-    @FXML Label score, time, combo, endscore;
-    @FXML VBox endgame;
+    @FXML Label ready, score, time, combo, endscore;
+    @FXML VBox ready_game, endgame;
     @FXML GridPane game;
     int point=0;
     int comboHit=0;
+    int maxcombo=0;
     Random ran = new Random();
     private Timeline timeline;
-    private int timeLeft = 30;
+    private int timeLeft = 10;
+    private Timeline countdownTimeline;
+    private int countdownTime = 4;
+    AudioClip hit_sound, countdown_sound, start_sound, gamestart_sound;
 
     @FXML
     public void initialize() {
@@ -46,12 +51,48 @@ public class PlayController{
         Background bGround = new Background(bImg);
         game.setBackground(bGround);
         
+        hit_sound = new AudioClip(getClass().getResource("hit.wav").toExternalForm());
+        countdown_sound = new AudioClip(getClass().getResource("countdown_music.wav").toExternalForm());
+        start_sound = new AudioClip(getClass().getResource("start_music.wav").toExternalForm());
+        gamestart_sound = new AudioClip(getClass().getResource("gamestart_music.mp3").toExternalForm());
+        
         ImageView[] images = {image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12};
         for(int i=0; i<12; i++){
             Image image = new Image(getClass().getResource("image.png").toExternalForm());
             images[i].setImage(image);
         }
         
+        setupCountdown();
+        setupKeyboardControl();
+        setupButtons();
+    }
+    
+    private void setupCountdown() {
+        countdownTimeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
+            
+            if(countdownTime > 1){
+                countdown_sound.play();
+                ready.setText(String.valueOf(countdownTime-1));
+            }
+            else if (countdownTime == 1) {
+                start_sound.play();
+                ready.setText("開始");
+                startGame();
+                gamestart_sound.play();
+            }
+            else{
+                ready_game.setOpacity(0);
+                countdownTimeline.stop();
+            }
+            countdownTime--;
+        }));
+
+        countdownTimeline.setCycleCount(5); 
+        countdownTimeline.play();
+    }
+    
+    private void startGame() {
+        ImageView[] images = {image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12};
         for(int i=0; i<12; i+=3){
             int r = ran.nextInt(3)+i;
             if(r == 0 && r < images.length){
@@ -61,14 +102,12 @@ public class PlayController{
                 images[r].setOpacity(1);
             }
         }
-        setupKeyboardControl();
-        setupButtons();
         setupTimer();
     }
     
     //鍵盤控制
     private void setupKeyboardControl() {
-        A.sceneProperty().addListener((_, _, newScene) -> {
+        A.sceneProperty().addListener((observable, oldScene, newScene) -> {
             if (newScene != null) {
                 newScene.setOnKeyPressed(this::handleKeyPress);
             }
@@ -112,11 +151,10 @@ public class PlayController{
     
     //射擊圓形設定
     private void Shot_Circle(int column) {
-        AudioClip pop_sound = new AudioClip(getClass().getResource("pop.wav").toExternalForm());
         ImageView[] images = {image10, image11, image12};
         ImageView circle = images[column];
         if(circle.getOpacity() == 1.0){
-            pop_sound.play();
+            hit_sound.play();
             comboHit++;
             point+=10+(comboHit/5)*5;
             score.setText("Score : "+point);
@@ -124,6 +162,9 @@ public class PlayController{
             placeRandomCircles();
         }
         else{
+            if(comboHit > maxcombo){
+                maxcombo = comboHit;
+            }
             comboHit=0;
         }
         combo.setText("Combo : "+comboHit);
@@ -152,7 +193,7 @@ public class PlayController{
             timeline.stop();
         }
         time.setText("Time :"+timeLeft);
-        timeline = new Timeline(new KeyFrame(Duration.seconds(1), _ ->{
+        timeline = new Timeline(new KeyFrame(Duration.seconds(1), event ->{
             timeLeft--;
             time.setText("Time :"+timeLeft);
             if(timeLeft <= 0){
@@ -196,10 +237,11 @@ public class PlayController{
     @FXML
     public void GameOver() throws IOException{
         if(timeLeft==0){
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GameOverController.fxml"));
+            gamestart_sound.stop();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GameOver.fxml"));
             Parent root = fxmlLoader.load();
             GameOverController controller = fxmlLoader.getController();
-            controller.initialize(point,comboHit);
+            controller.initialize(point,maxcombo,1);
             Stage stage = (Stage) game.getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
