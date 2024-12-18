@@ -1,7 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMain.java to edit this template
- */
+* Author:https://github.com/kobocawaee
+* Author:https://github.com/JeffreyLee143
+*/
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +15,7 @@ import javafx.stage.Stage;
      public void start(Stage stage) throws Exception {
          Parent root = FXMLLoader.load(getClass().getResource("MenuController.fxml"));
          Scene scene = new Scene(root);
-         Image img = new Image(getClass().getResource("icon.jpg").toExternalForm());//縮圖及背景圖片
+         Image img = new Image(getClass().getResource("/res/icon.jpg").toExternalForm());//縮圖及背景圖片
          stage.getIcons().add(img);
          stage.setTitle("圓射!啟動!!");
          stage.setScene(scene);

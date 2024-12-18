@@ -18,12 +18,12 @@
             <Font size="35.0" />
          </font>
       </Text>
-      <Button fx:id="button_play_again" ellipsisString="" layoutX="92.0" layoutY="259.0" mnemonicParsing="false" onAction="#Click_Play_Again" opacity="0.0" prefHeight="80.0" prefWidth="181.0" style="-fx-background-image: url('button_playagain.png');">
+      <Button fx:id="button_play_again" ellipsisString="" layoutX="92.0" layoutY="259.0" mnemonicParsing="false" onAction="#Click_Play_Again" opacity="0.0" prefHeight="80.0" prefWidth="181.0" style="-fx-background-image: url('/res/button_playagain.png');">
          <font>
             <Font size="28.0" />
          </font>
       </Button>
-      <Button fx:id="button_title" ellipsisString="" layoutX="92.0" layoutY="356.0" mnemonicParsing="false" onAction="#Click_title" opacity="0.0" prefHeight="80.0" prefWidth="181.0" style="-fx-background-image: url('button_title.png');">
+      <Button fx:id="button_title" ellipsisString="" layoutX="92.0" layoutY="356.0" mnemonicParsing="false" onAction="#Click_title" opacity="0.0" prefHeight="80.0" prefWidth="181.0" style="-fx-background-image: url('/res/button_title.png');">
          <font>
             <Font size="28.0" />
          </font>

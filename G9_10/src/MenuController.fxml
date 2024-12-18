@@ -6,17 +6,17 @@
 
 <AnchorPane fx:id="game" maxHeight="466.0" maxWidth="364.0" minHeight="466.0" minWidth="364.0" prefHeight="466.0" prefWidth="364.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuController">
    <children>
-      <Button fx:id="help" layoutX="101.0" layoutY="305.0" mnemonicParsing="false" opacity="0.0" prefHeight="77.0" prefWidth="156.0" style="-fx-background-image: url('HELP.png');">
+      <Button fx:id="button_help" layoutX="101.0" layoutY="305.0" mnemonicParsing="false" onAction="#Click_Help" opacity="0.0" prefHeight="77.0" prefWidth="156.0" style="-fx-background-image: url('/res/HELP.png');">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button_play2" layoutX="101.0" layoutY="195.0" mnemonicParsing="false" onAction="#Click_Play2" opacity="0.0" prefHeight="77.0" prefWidth="156.0" style="-fx-background-image: url('four.png');">
+      <Button fx:id="button_play2" layoutX="101.0" layoutY="195.0" mnemonicParsing="false" onAction="#Click_Play2" opacity="0.0" prefHeight="77.0" prefWidth="156.0" style="-fx-background-image: url('/res/four.png');">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button_play1" layoutX="101.0" layoutY="88.0" mnemonicParsing="false" onAction="#Click_Play1" opacity="0.0" prefHeight="77.0" prefWidth="156.0" style="-fx-background-image: url('three.png');">
+      <Button fx:id="button_play1" layoutX="101.0" layoutY="88.0" mnemonicParsing="false" onAction="#Click_Play1" opacity="0.0" prefHeight="77.0" prefWidth="156.0" style="-fx-background-image: url('/res/three.png');">
          <font>
             <Font size="24.0" />
          </font>

@@ -1,3 +1,8 @@
+/*
+* Author:https://github.com/kobocawaee
+* Author:https://github.com/JeffreyLee143
+*/
+
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,27 +17,26 @@ import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
-import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 public class MenuController {
     @FXML
-    private Button button_play1, button_play2, help;
+    private Button button_play1, button_play2, button_help;
     @FXML AnchorPane game;
     private MediaPlayer backgroundMusicPlayer;
     
     @FXML
     public void initialize() {
-        Image img = new Image(getClass().getResource("game_background.png").toExternalForm()); //背景圖片
+        Image img = new Image(getClass().getResource("/res/game_background.png").toExternalForm()); //背景圖片
         BackgroundImage bImg = new BackgroundImage(img, BackgroundRepeat.NO_REPEAT,
         BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         Background bGround = new Background(bImg);
         game.setBackground(bGround);
         
         
-        Media backgroundMusic = new Media(getClass().getResource("game_background_music.mp3").toExternalForm());
+        Media backgroundMusic = new Media(getClass().getResource("/res/game_background_music.mp3").toExternalForm());
         backgroundMusicPlayer = new MediaPlayer(backgroundMusic);
         backgroundMusicPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         backgroundMusicPlayer.play();
@@ -40,7 +44,7 @@ public class MenuController {
     @FXML
     public void Click_Play1(ActionEvent event) throws IOException {
         backgroundMusicPlayer.stop();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Play1.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Play1Controller.fxml"));
         Parent root = loader.load();
         
         // 取得目前舞台
@@ -55,11 +59,26 @@ public class MenuController {
     @FXML
     public void Click_Play2(ActionEvent event) throws IOException {
         backgroundMusicPlayer.stop();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Play2.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Play2Controller.fxml"));
         Parent root = loader.load();
         
         // 取得目前舞台
         Stage stage = (Stage) button_play2.getScene().getWindow();
+        
+        // 建立一個新的場景，並將其設定為舞台的場景
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    @FXML
+    public void Click_Help(ActionEvent event) throws IOException {
+        backgroundMusicPlayer.stop();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("HelpController.fxml"));
+        Parent root = loader.load();
+        
+        // 取得目前舞台
+        Stage stage = (Stage) button_help.getScene().getWindow();
         
         // 建立一個新的場景，並將其設定為舞台的場景
         Scene scene = new Scene(root);
