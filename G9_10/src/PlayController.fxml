@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<GridPane fx:id="game" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="364.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PlayController">
+<GridPane fx:id="game" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="364.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Play1Controller">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="20.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="20.0" />
@@ -94,13 +94,19 @@
       <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <children>
             <ImageView fx:id="image8" fitHeight="92.0" fitWidth="102.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" />
-            <VBox fx:id="endgame" alignment="CENTER_LEFT" minHeight="93.0" minWidth="119.0" opacity="0.0" prefHeight="93.0" prefWidth="134.0">
+            <VBox fx:id="endgame" alignment="TOP_CENTER" opacity="0.0" prefHeight="93.0" prefWidth="148.0">
                <children>
-                  <Label fx:id="endscore" ellipsisString="" minWidth="122.0" prefHeight="55.0" prefWidth="122.0" textFill="WHITE">
+                  <Label fx:id="endscore" prefHeight="38.0" prefWidth="285.0" textAlignment="CENTER" />
+                  <Button fx:id="again" mnemonicParsing="false" onAction="#play_again" prefHeight="23.0" prefWidth="126.0" text="再來一次" />
+               </children>
+            </VBox>
+            <VBox fx:id="ready_game" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="ready" textFill="#00f220">
                      <font>
-                        <Font size="20.0" />
-                     </font></Label>
-                  <Button fx:id="again" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" ellipsisString="" mnemonicParsing="false" onAction="#play_again" prefHeight="23.0" prefWidth="126.0" text="再來一次" textAlignment="CENTER" />
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
          </children>
@@ -131,3 +137,4 @@
       </StackPane>
    </children>
 </GridPane>
+
