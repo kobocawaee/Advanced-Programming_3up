@@ -26,15 +26,15 @@
       <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button fx:id="D" mnemonicParsing="false" prefHeight="101.0" prefWidth="200.0" style="-fx-background-image: url('/res/Button2_D.png');" text="D" textFill="WHITE" GridPane.rowIndex="4">
+      <Button fx:id="D" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="101.0" prefWidth="200.0" style="-fx-background-image: url('/res/Button2_D.png');" text="D" textFill="WHITE" GridPane.rowIndex="4">
          <font>
             <Font size="25.0" />
          </font></Button>
-      <Button fx:id="F" mnemonicParsing="false" prefHeight="105.0" prefWidth="200.0" style="-fx-background-image: url('/res/Button2_F.png');" text="F" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+      <Button fx:id="F" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="105.0" prefWidth="200.0" style="-fx-background-image: url('/res/Button2_F.png');" text="F" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
          <font>
             <Font size="25.0" />
          </font></Button>
-      <Button fx:id="J" mnemonicParsing="false" prefHeight="101.0" prefWidth="136.0" style="-fx-background-image: url('/res/Button2_J.png');" text="J" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
+      <Button fx:id="J" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="101.0" prefWidth="136.0" style="-fx-background-image: url('/res/Button2_J.png');" text="J" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
          <font>
             <Font size="25.0" />
          </font></Button>
@@ -112,7 +112,7 @@
             <ImageView fx:id="image15" fitHeight="91.0" fitWidth="90.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </StackPane>
-      <Button fx:id="K" mnemonicParsing="false" prefHeight="93.0" prefWidth="94.0" style="-fx-background-image: url('/res/Button2_K.png');" text="K" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="4">
+      <Button fx:id="K" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="93.0" prefWidth="94.0" style="-fx-background-image: url('/res/Button2_K.png');" text="K" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="4">
          <font>
             <Font size="25.0" />
          </font>
