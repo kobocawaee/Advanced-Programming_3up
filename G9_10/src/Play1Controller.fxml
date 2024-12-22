@@ -26,20 +26,20 @@
       <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button fx:id="A" mnemonicParsing="false" prefHeight="101.0" prefWidth="200.0" style="-fx-background-image: url('/res/button_A.jpg');" text="A" textFill="WHITE" GridPane.rowIndex="4">
+      <Button fx:id="A" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="101.0" prefWidth="200.0" style="-fx-background-image: url('/res/button_A.jpg');" text="A" textFill="WHITE" GridPane.rowIndex="4">
          <font>
             <Font size="25.0" />
          </font></Button>
-      <Button fx:id="W" mnemonicParsing="false" prefHeight="105.0" prefWidth="200.0" style="-fx-background-image: url('/res/button_W.jpg');" text="W" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+      <Button fx:id="W" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="105.0" prefWidth="200.0" style="-fx-background-image: url('/res/button_W.jpg');" text="W" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
          <font>
             <Font size="25.0" />
          </font></Button>
-      <Button fx:id="D" mnemonicParsing="false" prefHeight="101.0" prefWidth="136.0" style="-fx-background-image: url('/res/button_D.jpg');" text="D" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
+      <Button fx:id="D" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="101.0" prefWidth="136.0" style="-fx-background-image: url('/res/button_D.jpg');" text="D" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
          <font>
             <Font size="25.0" />
          </font></Button>
       <Line endX="-118.54415893554688" endY="6.50750732421875" startX="-118.54415893554688" startY="656.8004150390625" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Line endX="756.7723388671875" endY="6.50750732421875" startX="756.7723388671875" startY="-460.41094970703125" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Line endX="756.7723388671875" endY="6.50750732421875" startX="756.7723388671875" startY="-495.41094970703125" GridPane.columnIndex="2" GridPane.rowIndex="2" />
       <VBox maxWidth="364.0" minWidth="364.0" prefHeight="100.0" prefWidth="364.0">
          <children>
             <Label fx:id="score" ellipsisString="" minWidth="364.0" prefHeight="15.0" prefWidth="103.0" text="Score : 0" textFill="WHITE">
