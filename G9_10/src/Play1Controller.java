@@ -64,7 +64,7 @@ public class Play1Controller{
         
         setupCountdown();
         setupKeyboardControl();
-        setupButtons();
+        
     }
     
     private void setupCountdown() {
@@ -122,14 +122,8 @@ public class Play1Controller{
         }
     }
     
-    //按鈕控制
-    private void setupButtons() {
-        A.setOnAction(this::handleButtonClick);
-        W.setOnAction(this::handleButtonClick);
-        D.setOnAction(this::handleButtonClick);
-    }
-    
-    private void handleButtonClick(ActionEvent event) {
+    @FXML
+    public void handleButtonClick(ActionEvent event) {
         Button clickedButton = (Button)event.getSource();
         int column;
         if (clickedButton == A) column = 0;
@@ -213,3 +207,4 @@ public class Play1Controller{
         }
     }
 }
+
