@@ -71,7 +71,6 @@ public class Play2Controller{
         
         setupCountdown();
         setupKeyboardControl();
-        setupButtons();
     }
     
     private void setupCountdown() {
@@ -130,15 +129,8 @@ public class Play2Controller{
         }
     }
     
-    //按鈕控制
-    private void setupButtons() {
-        D.setOnAction(this::handleButtonClick);
-        F.setOnAction(this::handleButtonClick);
-        J.setOnAction(this::handleButtonClick);
-        K.setOnAction(this::handleButtonClick);
-    }
-    
-    private void handleButtonClick(ActionEvent event) {
+    @FXML
+    public void handleButtonClick(ActionEvent event) {
         Button clickedButton = (Button)event.getSource();
         int column;
         if (clickedButton == D) column = 0;
