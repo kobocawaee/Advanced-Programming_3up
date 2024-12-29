@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLController">
+   <children>
+      <Label layoutX="119.0" layoutY="18.0" prefHeight="15.0" prefWidth="9.0" text="+" />
+      <TextField fx:id="num1" layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="94.0" />
+      <TextField fx:id="num2" layoutX="139.0" layoutY="14.0" prefHeight="23.0" prefWidth="94.0" />
+      <Label layoutX="245.0" layoutY="18.0" text="=" />
+      <TextField fx:id="total" layoutX="264.0" layoutY="14.0" prefHeight="23.0" prefWidth="94.0" />
+      <Label fx:id="result" layoutX="373.0" layoutY="18.0" prefHeight="15.0" prefWidth="130.0" />
+      <Button layoutX="14.0" layoutY="54.0" mnemonicParsing="false" onAction="#quesion" text="出題" />
+      <Button layoutX="96.0" layoutY="54.0" mnemonicParsing="false" onAction="#checkans" text="核對" />
+   </children>
+</AnchorPane>
